@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 
 function App() {
   const socket = useMemo(() => new io('https://mechat-server-ht7t.onrender.com/'), [])
+  // const socket = useMemo(() => new io('http://localhost:3000/'), [])
 
   const [message, setMessage] = useState('')
   const [room, setRoom] = useState('')
@@ -27,7 +28,7 @@ function App() {
 
     //
     socket.on('recieved-message', (data) => {
-      // console.log(data)
+      console.log(data)
       setChat((chat) => [...chat, data])
     })
 
@@ -52,7 +53,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    socket.emit('message', { message, room })
+    socket.emit('message', { message, room, userId })
     setMessage("")
   }
   const handleJoinRoom = (e) => {
@@ -99,24 +100,28 @@ function App() {
         <div className="chat-message">
           <ul className="chat">
             {chat && chat.map((item, index) => {
-              return <li key={index}>{item}</li>
+              if (userId === item.userId) {
+                return <div className='li-item'><li key={index} className='chat-right'>{item.message}</li></div>
+              } else {
+                return <div className='li-item'><li key={index} className='chat-left'>{item.message}</li></div>
+              }
             })}
           </ul>
         </div>
 
         <form className="message-form" onSubmit={handleSubmit}>
           <div>
-          <input
-            placeholder='Enter Room Name or User Room ID'
-            value={room}
-            onChange={(e) => setRoom(e.target.value)}
-          />
+            <input
+              placeholder='Enter Room Name or User Room ID'
+              value={room}
+              onChange={(e) => setRoom(e.target.value)}
+            />
           </div>
           <div>
             <textarea
-            placeholder='Enter message'
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+              placeholder='Enter message'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
             <button type='submit'>Send</button>
           </div>

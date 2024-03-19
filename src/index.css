@@ -45,21 +45,41 @@
 
 
 .chat-message {
-  width: 60%;
-  margin: 1rem auto;
-  padding: 10px 20px;
+  width: 90%;
+  margin: 1px auto;
+  padding: 0px 20px;
   overflow-y: auto;
   box-sizing: border-box;
-  height: 65vh;
+  height: 72vh;
   scrollbar-width: none;
 }
 
+.li-item {
+  width: 100%;
+  display: grid;
+  margin: 10px auto;
+}
 
-.chat>li {
+.chat-right {
+  justify-self: right;
   list-style: none;
-  background-color: #eeeeee91;
-  margin: 5px auto;
+  background-color: #005c4b;
+  color: white;
+  border-radius: 7.5px;
+  border-top-right-radius: 0;
   padding: 5px 10px;
+  width: fit-content;
+}
+
+.chat-left {
+  justify-self: left;
+  list-style: none;
+  background-color: #202c33;
+  border-radius: 7.5px;
+  border-top-left-radius: 0;
+  color: whitesmoke;
+  padding: 5px 10px;
+  width: fit-content;
 }
 
 .room-form {
