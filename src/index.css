@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.message-form {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin: 5px 10px;
+}
+
+.message-form>textarea {
+  width: 50%;
+  padding: 10px 20px;
+}
+
+.message-form>input {
+  width: 30%;
+  padding: 10px 20px;
+}
+
+.message-form>button {
+  width: 20%;
+  padding: 10px 20px;
+}
+
+.message>h4 {
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+
+.chat-message {
+  width: 60%;
+  margin: 1rem auto;
+  padding: 10px 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  height: 65vh;
+  scrollbar-width: none;
+}
+
+
+.chat>li {
+  list-style: none;
+  background-color: #eeeeee91;
+  margin: 5px auto;
+  padding: 5px 10px;
+}
+
+.room-form {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-form>input {
+  width: 80%;
+  padding: 10px 20px;
+}
+
+.room-form>button {
+  width: 20%;
+  padding: 10px 20px;
+}
