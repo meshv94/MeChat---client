@@ -3,7 +3,7 @@ import { io } from 'socket.io-client'
 import { toast } from 'react-toastify'
 
 function App() {
-  const socket = useMemo(() => new io('https://mechat-server-k7yg.onrender.com'), [])
+  const socket = useMemo(() => new io('https://mechat-server-ht7t.onrender.com/'), [])
 
   const [message, setMessage] = useState('')
   const [room, setRoom] = useState('')
