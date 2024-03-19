@@ -8,25 +8,33 @@
 
 .message-form {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  width: 95%;
   position: fixed;
   bottom: 0;
   margin: 5px 10px;
 }
 
-.message-form>textarea {
-  width: 50%;
+.message-form>div {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.message-form>div>textarea {
+  width: 70%;
+  padding: 10px;
+}
+
+.message-form>div>input {
+  width: 100%;
   padding: 10px 20px;
 }
 
-.message-form>input {
+.message-form>div>button {
   width: 30%;
-  padding: 10px 20px;
-}
-
-.message-form>button {
-  width: 20%;
-  padding: 10px 20px;
+  padding: 10px;
+  /* border-left: none; */
 }
 
 .message>h4 {
@@ -55,7 +63,7 @@
 }
 
 .room-form {
-  width: 50%;
+  width: 95%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -63,11 +71,11 @@
 }
 
 .room-form>input {
-  width: 80%;
+  width: 70%;
   padding: 10px 20px;
 }
 
 .room-form>button {
-  width: 20%;
+  width: 30%;
   padding: 10px 20px;
 }

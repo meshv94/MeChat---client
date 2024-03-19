@@ -105,17 +105,21 @@ function App() {
         </div>
 
         <form className="message-form" onSubmit={handleSubmit}>
-          <textarea
-            placeholder='Enter message'
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
+          <div>
           <input
             placeholder='Enter Room Name or User Room ID'
             value={room}
             onChange={(e) => setRoom(e.target.value)}
           />
-          <button type='submit'>Send</button>
+          </div>
+          <div>
+            <textarea
+            placeholder='Enter message'
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            />
+            <button type='submit'>Send</button>
+          </div>
         </form>
       </div>
 
